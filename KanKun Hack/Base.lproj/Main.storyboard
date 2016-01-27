@@ -1,25 +1,103 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A282b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KanKun_Hack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEA-WN-8L7">
+                                <rect key="frame" x="16" y="20" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4k-bo-uu9">
+                                <rect key="frame" x="16" y="58" width="288" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.1.46" borderStyle="roundedRect" placeholder="SmartPlug IP Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eUa-FM-6Qd">
+                                <rect key="frame" x="16" y="92" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2H-J5-UfJ">
+                                <rect key="frame" x="16" y="130" width="288" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ON">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressOn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yM9-KV-1nn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhC-PE-a73">
+                                <rect key="frame" x="16" y="168" width="288" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.089409546146044627" blue="0.056707974137931036" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="OFF">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qaJ-c8-ZNE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdM-I5-bwF">
+                                <rect key="frame" x="16" y="206" width="288" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="TOGGLE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressToggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y9r-vs-Eyr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GEA-WN-8L7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2Wd-3Q-Zi5"/>
+                            <constraint firstItem="D4k-bo-uu9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4k9-BA-MET"/>
+                            <constraint firstItem="h2H-J5-UfJ" firstAttribute="top" secondItem="eUa-FM-6Qd" secondAttribute="bottom" constant="8" id="6mh-rr-7iv"/>
+                            <constraint firstItem="h2H-J5-UfJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9tB-a6-bmA"/>
+                            <constraint firstItem="eUa-FM-6Qd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9wB-Db-b4G"/>
+                            <constraint firstItem="tdM-I5-bwF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="F7o-A4-Fya"/>
+                            <constraint firstItem="h2H-J5-UfJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JX6-zC-wMk"/>
+                            <constraint firstItem="bhC-PE-a73" firstAttribute="top" secondItem="h2H-J5-UfJ" secondAttribute="bottom" constant="8" id="JkV-Aw-oKa"/>
+                            <constraint firstItem="GEA-WN-8L7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Mzv-Wd-aLD"/>
+                            <constraint firstItem="bhC-PE-a73" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PCg-Df-qxq"/>
+                            <constraint firstItem="tdM-I5-bwF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Qw7-YE-B4U"/>
+                            <constraint firstItem="tdM-I5-bwF" firstAttribute="top" secondItem="bhC-PE-a73" secondAttribute="bottom" constant="8" id="VzB-Rr-R7r"/>
+                            <constraint firstItem="eUa-FM-6Qd" firstAttribute="top" secondItem="D4k-bo-uu9" secondAttribute="bottom" constant="8" id="ebM-Cn-MJz"/>
+                            <constraint firstItem="GEA-WN-8L7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hCS-N3-qCJ"/>
+                            <constraint firstItem="D4k-bo-uu9" firstAttribute="top" secondItem="GEA-WN-8L7" secondAttribute="bottom" constant="8" id="joj-zW-EBd"/>
+                            <constraint firstItem="bhC-PE-a73" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pIk-TQ-NNg"/>
+                            <constraint firstItem="tdM-I5-bwF" firstAttribute="centerX" secondItem="bhC-PE-a73" secondAttribute="centerX" id="wKM-FA-KDB"/>
+                            <constraint firstItem="D4k-bo-uu9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xON-LM-wLO"/>
+                            <constraint firstItem="eUa-FM-6Qd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ygX-wg-E5n"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="currentIPAddressTextField" destination="eUa-FM-6Qd" id="Xxj-tq-Cws"/>
+                        <outlet property="currentStatusLabel" destination="D4k-bo-uu9" id="lP0-kh-Z31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="259" y="429"/>
         </scene>
     </scenes>
 </document>
